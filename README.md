@@ -1,31 +1,29 @@
 # FractionPainter
 
-FractionPainter is a jQuery plugin that draws fractions with circles. It is a useful tool to explain the meaning of *Fraction*.
+FractionPainter is a Javascript based tool that draws fractions using circles. It helps explain the meaning of *Fraction*.
+
+License: [MIT License](./LICENSE)
 
 ## Getting started
 
 Let's paint $\frac{10}{3}$ 🎨🖌️
 
-1. Include Jquery
-
-2. Download [jquery.fractionpainter.js file](./jquery.fractionpainter.js) and include in your code
+1. Download [fractionpainter.js file](./fractionpainter.js) and include in your code
    
    ```html
-   <script src="jquery.fractionpainter.js"></script>
+   <script src="fractionpainter.js"></script>
    ```
 
-3. Add the element where you want the fraction appear: a div or a span
+2. Add the element where you want the fraction appear: a div or a span
    
    ```html
    <div id="fraction_container1"></div>
    ```
 
-4. Create the instance of the fractionPainter
-   
+3. Call the `paint` method of the `fractionPainter` object: this takes the element [selector](https://www.w3schools.com/cssref/css_selectors.asp) as the first argument and the [options](#options) as the second argument.
+
    ```javascript
-   jQuery(document).ready(function(){ 
-    $("#fraction_container1").fractionPainter({width: 800, height: 450, numerator: 10, denominator: 3});
-   });
+    fractionPainter.paint("#fraction_container1", {width: 800, height: 450, numerator: 10, denominator: 3});
    ```
 
 and that's all (see [example.html](./example.html)):
@@ -34,7 +32,7 @@ and that's all (see [example.html](./example.html)):
 
 ## Options
 
-FractionPainter has some options that can be set when the instance is created.
+FractionPainter has some options that can be passed when the method `paint` is called.
 
 - `numerator` (default is 1)
 
@@ -43,7 +41,3 @@ FractionPainter has some options that can be set when the instance is created.
 - `width` set the canvas width
 
 - `height` set the canvas height
-
-## License
-
-See [LICENSE](./LICENSE)
